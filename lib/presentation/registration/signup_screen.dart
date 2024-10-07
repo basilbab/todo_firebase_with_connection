@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_firebase_with_connection/domain/user_model.dart';
 import 'package:todo_firebase_with_connection/infrastructure/todo_db.dart';
@@ -168,7 +167,10 @@ class _ScreenSignupState extends State<ScreenSignup> {
                         content: const Text('User Added Suceessfully.'),
                         action: SnackBarAction(
                           label: 'Ok',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const ScreenLogin()));
+                          },
                         ),
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
